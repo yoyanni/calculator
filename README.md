@@ -13,3 +13,12 @@ Very basic JS functions added for a calculator and also an operator function tha
 ## Add some basic HTML/CSS
 
 Buttons were added to resemble a calculator and also CSS to design it very scarsely. I used a grid for the number and the operator buttons, it felt it was a btter fit than flex.
+
+## Link UI with logic
+
+The HTML was linked to the JS so you can now add, subtract, multiply and divide.
+
+**Note:** The bugs at the moment, as far as I am aware, are:
+
+- You cannot perform more than a two number calculation.
+- Once you have chosen the operator, you will have to finish that calculation otherwise it will result in NaN.
