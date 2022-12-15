@@ -16,9 +16,20 @@ Buttons were added to resemble a calculator and also CSS to design it very scars
 
 ## Link UI with logic
 
-The HTML was linked to the JS so you can now add, subtract, multiply and divide.
+The HTML was linked to the JS so you can now add, subtract, multiply and divide. The front-end was adjusted a tiny bit to help connect with the logic.
 
 **Note:** The bugs at the moment, as far as I am aware, are:
 
 - You cannot perform more than a two number calculation.
 - Once you have chosen the operator, you will have to finish that calculation otherwise it will result in NaN.
+
+## Fix bugs
+
+What bugs were fixed:
+
+- You cannot perform more than a two number calculation.
+  - The calculator now can calculate more than two numbers but will first calculate the first two numbers and then go on like that. E.g. 12 + 7 - 5 * 3 = 19 - 5 * 3 = 14 * 3 = 42. (**Note:** There is no precedence since its a sequence of numbers, not the whole set.)
+- Once you have chosen the operator, you will have to finish that calculation otherwise it will result in NaN.
+  - How it use to work was, it would save the previous value and then display the operator. It would then save the previously incorrectly chosen operator as the value instead of a number. It now checks if the current displayed value is subtracted from itself if it equals zero, which has resolved the issue.
+- (new) You cannot input double digits.
+  - The issue was when adding an operator, to remove it it would just check if the display was a number or operator but not very well. It now clears the display only if it has been calculated or if there is an operator (using isNew boolean).
