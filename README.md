@@ -42,9 +42,13 @@ What bugs were fixed:
 
 Clear button was added, resetting everything... Finally :P
 
-## Bug fix
+## Fix bug
 
 What bug was fixed:
 
 - Trailing zeros with multiplying and divinding with whole numbers
   - It now checks using the modulus operator to make sure it is a whole number.
+
+## Add comment when dividing by zero
+
+"Naughty" will populate if try to divide by zero.

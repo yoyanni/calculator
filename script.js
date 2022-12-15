@@ -91,6 +91,9 @@ function multiply(a, b) {
 
 function divide(a, b) {
   calculated = true;
+  if (a == 0 || b == 0) {
+    return (display.innerText = "Naughty");
+  }
   if ((a / b) % 1 == 0) {
     return (display.innerText = a / b);
   } else {
