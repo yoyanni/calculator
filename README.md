@@ -37,3 +37,7 @@ What bugs were fixed:
 ## Fix rounding of decimal places
 
 10 / 3 = 3.3333.. Those 3's would bleed out of the normal size of the container and stretch it. So to fix it I have used .toFixed(3) which has rounded any number up to three decimal places.
+
+## Add Clear button
+
+Clear button was added, resetting everything... Finally :P

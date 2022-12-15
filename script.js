@@ -2,13 +2,22 @@ const display = document.getElementById("display");
 const numbers = document.getElementsByClassName("numbers");
 const operators = document.getElementsByClassName("operators");
 const equal = document.querySelector(".equal");
+const clear = document.getElementById("clear");
 
 let previous = 0;
 let firstOp = "";
-let secondOp = "";
 let value = 0;
 let calculated = false;
 let isNew = true;
+
+clear.addEventListener("click", (e) => {
+  previous = 0;
+  firstOp = "";
+  value = 0;
+  calculated = false;
+  isNew = true;
+  display.innerText = 0;
+});
 
 // Number Event Listener
 for (let i = 0; i < numbers.length; i++) {
