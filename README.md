@@ -33,3 +33,7 @@ What bugs were fixed:
   - How it use to work was, it would save the previous value and then display the operator. It would then save the previously incorrectly chosen operator as the value instead of a number. It now checks if the current displayed value is subtracted from itself if it equals zero, which has resolved the issue.
 - (new) You cannot input double digits.
   - The issue was when adding an operator, to remove it it would just check if the display was a number or operator but not very well. It now clears the display only if it has been calculated or if there is an operator (using isNew boolean).
+
+## Fix rounding of decimal places
+
+10 / 3 = 3.3333.. Those 3's would bleed out of the normal size of the container and stretch it. So to fix it I have used .toFixed(3) which has rounded any number up to three decimal places.

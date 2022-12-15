@@ -29,15 +29,14 @@ for (let i = 0; i < numbers.length; i++) {
 for (let i = 0; i < operators.length; i++) {
   operators[i].addEventListener("click", (e) => {
     if (firstOp == "") {
+      // if no operator has been chosen yet, set up for calculation
       previous = parseInt(display.innerText);
       firstOp = operators[i].innerText;
       isNew = true;
     } else {
       previous = operate(previous, firstOp, value);
+      console.log(`${previous} ${firstOp} ${value}`);
       firstOp = operators[i].innerText;
-      // secondOp = operators[i].innerText;
-      // firstOp = secondOp;
-      // console.log(`${previous} ${secondOp} ${value} 2nd`);
     }
   });
 }
@@ -45,7 +44,6 @@ for (let i = 0; i < operators.length; i++) {
 // Equal Event Listener
 equal.addEventListener("click", (e) => {
   operate(previous, firstOp, value);
-  //firstOp = "";
   console.log(`${previous} ${firstOp} ${value}`);
 });
 
@@ -54,16 +52,12 @@ function operate(a, op, b) {
   switch (true) {
     case op == "+":
       return add(a, b);
-      break;
     case op == "-":
       return subtract(a, b);
-      break;
     case op == "*":
       return multiply(a, b);
-      break;
     case op == "/":
       return divide(a, b);
-      break;
   }
 }
 
@@ -79,10 +73,10 @@ function subtract(a, b) {
 
 function multiply(a, b) {
   calculated = true;
-  return (display.innerText = a * b);
+  return (display.innerText = (a * b).toFixed(3));
 }
 
 function divide(a, b) {
   calculated = true;
-  return (display.innerText = a / b);
+  return (display.innerText = (a / b).toFixed(3));
 }
