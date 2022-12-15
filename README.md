@@ -28,7 +28,7 @@ The HTML was linked to the JS so you can now add, subtract, multiply and divide.
 What bugs were fixed:
 
 - You cannot perform more than a two number calculation.
-  - The calculator now can calculate more than two numbers but will first calculate the first two numbers and then go on like that. E.g. 12 + 7 - 5 * 3 = 19 - 5 * 3 = 14 * 3 = 42. (**Note:** There is no precedence since its a sequence of numbers, not the whole set.)
+  - The calculator now can calculate more than two numbers but will first calculate the first two numbers and then go on like that. E.g. 12 + 7 - 5 _ 3 = 19 - 5 _ 3 = 14 \* 3 = 42. (**Note:** There is no precedence since its a sequence of numbers, not the whole set.)
 - Once you have chosen the operator, you will have to finish that calculation otherwise it will result in NaN.
   - How it use to work was, it would save the previous value and then display the operator. It would then save the previously incorrectly chosen operator as the value instead of a number. It now checks if the current displayed value is subtracted from itself if it equals zero, which has resolved the issue.
 - (new) You cannot input double digits.
@@ -41,3 +41,10 @@ What bugs were fixed:
 ## Add Clear button
 
 Clear button was added, resetting everything... Finally :P
+
+## Bug fix
+
+What bug was fixed:
+
+- Trailing zeros with multiplying and divinding with whole numbers
+  - It now checks using the modulus operator to make sure it is a whole number.

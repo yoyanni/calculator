@@ -82,10 +82,18 @@ function subtract(a, b) {
 
 function multiply(a, b) {
   calculated = true;
-  return (display.innerText = (a * b).toFixed(3));
+  if ((a * b) % 1 == 0) {
+    return (display.innerText = a * b);
+  } else {
+    return (display.innerText = (a * b).toFixed(3));
+  }
 }
 
 function divide(a, b) {
   calculated = true;
-  return (display.innerText = (a / b).toFixed(3));
+  if ((a / b) % 1 == 0) {
+    return (display.innerText = a / b);
+  } else {
+    return (display.innerText = (a / b).toFixed(3));
+  }
 }
